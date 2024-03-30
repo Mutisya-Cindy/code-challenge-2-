@@ -1,0 +1,44 @@
+<!--Write a function that accepts a string as input and swaps the case of each character. 
+For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Document</title>
+</head>
+<body>
+    <!-- Input field for entering a  string -->
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <!--button to enable changeCase function-->
+    <button onclick="changeCase()">Swap Case</button>
+    <!--Enable output display-->
+    <p id="output"></p>
+    <script>
+
+        function changeCase() {
+            //gets input string from the field 
+  let input = document.getElementById("inputString").value;
+  let output = '';
+
+     //use of for loop to loop through all characters in string
+    for (let i = 0; i < input.length; i++) {
+        // get the present character
+     let char = input.charAt(i);
+     //confirm whether its upperCase
+        if (char === char.toUpperCase()) {
+            //change it to lowerCase and  add to output
+            output += char.toLowerCase();
+        }   
+        else {
+            output += char.toUpperCase();
+        }
+    }
+    // show the output
+    document.getElementById("output").innerText = output;
+}
+</script>
+
+</body>
+</html>
